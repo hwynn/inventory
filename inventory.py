@@ -10,6 +10,13 @@ def isValid(x):
 		print("Input must a number");
 		return(False);
 
+def invAddItem(x):
+	#check if the item is already in inventory
+	if(x in inventory):
+		inventory[x] = inventory[x] + 1;
+	else:
+		inventory[x] = 1;
+
 menu = "1) Check inventory\n2) Add item to inventory\n3) Remove item from inventory"
 print(menu);
 inventory = {}
