@@ -16,6 +16,9 @@ def invAddItem(x):
 		inventory[x] = inventory[x] + 1;
 	else:
 		inventory[x] = 1;
+		
+def checkInventory():
+	print(inventory);
 
 menu = "1) Check inventory\n2) Add item to inventory\n3) Remove item from inventory"
 print(menu);
