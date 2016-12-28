@@ -1,5 +1,5 @@
 import sys
-
+inventory = {}
 def giveValid():
 	while(True):
 		str1 = input("Enter your input: ");
@@ -28,25 +28,17 @@ def invRemoveItem(x):
 	else:
 		print("item doesn't exist");
 
-def checkInventory():
-	print(inventory);
-
-inventory = {}
-
-def runner(x):
-	if(x==1):
-		checkInventory();
-	elif(x==2):
+while(True):
+	print("1) Check inventory\n2) Add item to inventory\n3) Remove item from inventory\n4) Quit");
+	given = giveValid();
+	if(given==1):
+		print(inventory);
+	elif(given==2):
 		invAddItem(input("What will you add?: "));
-	elif(x==3):
+	elif(given==3):
 		invRemoveItem(input("What will you remove?: "));
-	elif(x==4):
+	elif(given==4):
 		print("Goodbye");
 		sys.exit()
 	else:
 		print("We didn't plan for this");
-
-while(True):
-	print("1) Check inventory\n2) Add item to inventory\n3) Remove item from inventory\n4) Quit");
-	given = giveValid();
-	runner(given)
