@@ -1,3 +1,5 @@
+import sys
+
 def giveValid():
 	while(True):
 		str1 = input("Enter your input: ");
@@ -34,23 +36,17 @@ inventory = {}
 def runner(x):
 	if(x==1):
 		checkInventory();
-		return(False);
 	elif(x==2):
 		invAddItem(input("What will you add?: "));
-		return(False);
 	elif(x==3):
 		invRemoveItem(input("What will you remove?: "));
-		return(False);
 	elif(x==4):
 		print("Goodbye");
-		return(True);
+		sys.exit()
 	else:
 		print("We didn't plan for this");
-		return(False);
 
 while(True):
 	print("1) Check inventory\n2) Add item to inventory\n3) Remove item from inventory\n4) Quit");
 	given = giveValid();
-	if(runner(given) == False):
-		continue
-	break
+	runner(given)
