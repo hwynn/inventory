@@ -17,7 +17,6 @@ def invAddItem(x):
 	else:
 		inventory[x] = 1;
 		
-		
 def invRemoveItem(x):
 	if(x in inventory):
 		if(inventory[x]>1):
@@ -30,26 +29,28 @@ def invRemoveItem(x):
 def checkInventory():
 	print(inventory);
 
-menu = "1) Check inventory\n2) Add item to inventory\n3) Remove item from inventory\n4) Quit"
-
 inventory = {}
-finished = False;
 
 def runner(x):
-	global finished
 	if(x==1):
 		checkInventory();
+		return(False);
 	elif(x==2):
 		invAddItem(input("What will you add?: "));
+		return(False);
 	elif(x==3):
 		invRemoveItem(input("What will you remove?: "));
+		return(False);
 	elif(x==4):
-		finished = True;
 		print("Goodbye");
+		return(True);
 	else:
 		print("We didn't plan for this");
+		return(False);
 
-while(finished!=True):
-	print(menu);
+while(True):
+	print("1) Check inventory\n2) Add item to inventory\n3) Remove item from inventory\n4) Quit");
 	given = giveValid();
-	runner(int(given));
+	if(runner(int(given)) == False):
+		continue
+	break
