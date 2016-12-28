@@ -11,10 +11,10 @@ def isValid(x):
 		return(False);
 
 def giveValid():
-	valid = False;
-	while(valid!=True):
+	while(True):
 		str1 = input("Enter your input: ");
-		valid = isValid(str1)
+		if(isValid(str1)):
+			break
 	return(str1);
 
 def invAddItem(x):
