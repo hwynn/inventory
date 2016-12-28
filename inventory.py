@@ -8,7 +8,7 @@ def giveValid():
 			print("Input must be between 1 and 4");
 			continue
 		break
-	return(str1);
+	return(int(str1));
 
 def invAddItem(x):
 	#check if the item is already in inventory
@@ -51,6 +51,6 @@ def runner(x):
 while(True):
 	print("1) Check inventory\n2) Add item to inventory\n3) Remove item from inventory\n4) Quit");
 	given = giveValid();
-	if(runner(int(given)) == False):
+	if(runner(given) == False):
 		continue
 	break
