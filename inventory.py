@@ -1,20 +1,13 @@
-def isValid(x):
-	"Tests if the input is proper"
-	if(x.isdigit()):
-		if((int(x)>=1)and(int(x)<=4)):
-			return(True);
-		else:
-			print("Input must be between 1 and 5");
-			return(False);
-	else:
-		print("Input must a number");
-		return(False);
-
 def giveValid():
 	while(True):
 		str1 = input("Enter your input: ");
-		if(isValid(str1)):
-			break
+		if(str1.isdigit() == False):
+			print("Input must a number");
+			continue
+		if((int(str1)>=1)and(int(str1)<=4) == False):
+			print("Input must be between 1 and 4");
+			continue
+		break
 	return(str1);
 
 def invAddItem(x):
